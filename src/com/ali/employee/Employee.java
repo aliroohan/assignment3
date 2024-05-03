@@ -27,14 +27,10 @@ public abstract class Employee {
 
     public static double payroll(Employee employee) {
         double pay = 0;
-        if (employee instanceof BasePlusCommissionEmpolyee) {
+        if (employee instanceof BasePlusCommissionEmpolyee || LocalDate.now().getMonthValue() == employee.birthDate.getMonth()) {
             pay = employee.earnings() + employee.earnings() * .1 + 100;
         } else {
             pay = employee.earnings() + employee.earnings() * .1;
-        }
-
-        if (LocalDate.now().getMonthValue() == employee.birthDate.getMonth()) {
-            pay += 100;
         }
         return pay;
     }
