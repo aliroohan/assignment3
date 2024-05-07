@@ -31,10 +31,16 @@ public class Patient {
 
     @Override
     public String toString() {
-        return "Patient{" +
-                "pName='" + pName + '\'' +
-                ", pDisease='" + pDisease + '\'' +
-                ", pId=" + pId +
-                '}';
+        return String.format("%s: %d\n%s: %s\n%s: %s",
+                "PatientId", getpId(),
+                "Patient Name", getpName(),
+                "Patient Fee", getpDisease()
+        );
+    }
+
+    public Patient(String pName, String pDisease, int pId) {
+        this.setpName(pName);
+        this.setpDisease(pDisease);
+        this.setpId(pId);
     }
 }

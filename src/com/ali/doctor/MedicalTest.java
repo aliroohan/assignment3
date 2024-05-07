@@ -31,10 +31,16 @@ public class MedicalTest {
 
     @Override
     public String toString() {
-        return "MedicalTest{" +
-                "testName='" + testName + '\'' +
-                ", testId=" + testId +
-                ", testPrice=" + testPrice +
-                '}';
+        return String.format("%s: %d\n%s: %s\n%s: %.2f\n",
+                "TestId", getTestId(),
+                "Test Name", getTestName(),
+                "TestFee", getTestPrice()
+        );
+    }
+
+    public MedicalTest(String testName, int testId, double testPrice) {
+        this.setTestName(testName);
+        this.setTestId(testId);
+        this.setTestPrice(testPrice);
     }
 }

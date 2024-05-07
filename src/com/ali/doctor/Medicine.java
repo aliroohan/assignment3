@@ -40,11 +40,18 @@ public class Medicine {
 
     @Override
     public String toString() {
-        return "Medicine{" +
-                "medName='" + medName + '\'' +
-                ", medId=" + medId +
-                ", medPrice=" + medPrice +
-                ", medQty=" + medQty +
-                '}';
+        return String.format("%s: %d\n%s: %s\n%s: %d\n%s: %.2f\n",
+                "MedicineId", getMedId(),
+                "Medicine Name", getMedName(),
+                "Medicine Quantity", getMedQty(),
+                "Medicine Price", getMedPrice()
+        );
+    }
+
+    public Medicine(String medName, int medId, double medPrice, int medQty) {
+        this.setMedName(medName);
+        this.setMedId(medId);
+        this.setMedPrice(medPrice);
+        this.setMedQty(medQty);
     }
 }

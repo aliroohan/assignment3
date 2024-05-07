@@ -31,10 +31,16 @@ public class Doctor {
 
     @Override
     public String toString() {
-        return "Doctor{" +
-                "docName='" + docName + '\'' +
-                ", docId=" + docId +
-                ", docFee=" + docFee +
-                '}';
+        return String.format("%s: %d\n%s: %s\n%s: %.2f",
+                "DoctorId", getDocId(),
+                "Doctor Name", getDocName(),
+                "Doctor Fee", getDocFee()
+        );
+    }
+
+    public Doctor(String docName, int docId, double docFee) {
+        this.setDocName(docName);
+        this.setDocId(docId);
+        this.setDocFee(docFee);
     }
 }
